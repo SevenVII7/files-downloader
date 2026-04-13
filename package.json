@@ -1,11 +1,13 @@
 {
   "name": "as",
   "version": "1.0.0",
-  "main": "i.js",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node i.js",
-    "dev": "nodemon i.js"
+    "start": "ts-node ./src/index.ts",
+    "dev": "nodemon --watch ./src/index.ts --exec ts-node ./src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +16,17 @@
     "axios": "^1.13.5",
     "express": "^5.2.1",
     "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.1"
   }
 }
